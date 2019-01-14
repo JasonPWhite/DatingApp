@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,6 +15,11 @@ namespace DatingApp.API
     {
         public static void Main(string[] args)
         {
+            var dt = DateTime.Now.AddHours(-4);
+            var test = DateTime.Now.ToShortTimeString() + ' ' +  DateTime.Now.ToString("tt", CultureInfo.InvariantCulture);
+            Console.Write(test);
+            var test2 = dt.ToString("hh:mm tt", CultureInfo.InvariantCulture);
+            Console.Write(test2);
             CreateWebHostBuilder(args).Build().Run();
         }
 
